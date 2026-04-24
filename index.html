@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Підтвердження походження коштів від нерухомості в Україні. Аналітична довідка для банку, податкової, нотаріуса — дистанційно, PDF на email. БудЕксперт, Васильків.">
+<meta name="keywords" content="підтвердження походження коштів, довідка для банку Польща Німеччина, ретроспективна оцінка нерухомості, довідка про вартість майна для банку, оцінка квартири на дату угоди, довідка для іноземного банку українці закордон">
+<title>Підтвердження походження коштів від нерухомості України | БудЕксперт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090F;
+  --bg2:#0B0F1A;
+  --gold:#D4A843;
+  --gold2:#F0C96A;
+  --gold3:#8A6820;
+  --green:#2ECC71;
+  --text:#EDE8DF;
+  --muted:rgba(237,232,223,0.45);
+  --border:rgba(212,168,67,0.15);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background-color:#07090F;color:#EDE8DF;font-family:'Syne',sans-serif;overflow-x:hidden;min-height:100vh;-webkit-font-smoothing:antialiased;}
+#cvs{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px 300px;}
+.page{position:relative;z-index:2;}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:999;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,9,15,0.92);border-bottom:1px solid rgba(212,168,67,0.1);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-box{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:9px;display:flex;align-items:center;justify-content:center;background:rgba(212,168,67,0.08);flex-shrink:0;font-size:16px;}
+.logo-name{font-size:15px;font-weight:800;color:#EDE8DF;line-height:1.1;}
+.logo-sub{font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:1px;}
+.hdr-right{display:flex;align-items:center;gap:10px;}
+.hdr-tel{font-size:13px;font-weight:700;color:var(--gold);text-decoration:none;display:none;}
+@media(min-width:600px){.hdr-tel{display:block;}}
+.hdr-btn{background:transparent;border:1.5px solid var(--gold);color:var(--gold);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:6px;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap;cursor:pointer;}
+.hdr-btn:hover{background:var(--gold);color:#07090F;}
+
+/* ── HERO ── */
+.hero{min-height:100svh;padding:100px 24px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.crn{position:absolute;width:20px;height:20px;pointer-events:none;}
+.crn::before,.crn::after{content:'';position:absolute;background:var(--gold);opacity:0.5;}
+.crn::before{width:100%;height:1.5px;top:0;left:0;}
+.crn::after{width:1.5px;height:100%;top:0;left:0;}
+.crn.tl{top:80px;left:20px;}
+.crn.tr{top:80px;right:20px;transform:scaleX(-1);}
+.crn.bl{bottom:40px;left:20px;transform:scaleY(-1);}
+.crn.br{bottom:40px;right:20px;transform:scale(-1);}
+.scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.5),transparent);animation:scanAnim 7s linear infinite;pointer-events:none;}
+@keyframes scanAnim{0%{top:0%;opacity:0;}5%{opacity:1;}95%{opacity:0.6;}100%{top:100%;opacity:0;}}
+.fcoord{position:absolute;font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(212,168,67,0.4);animation:floatY 4s ease-in-out infinite;pointer-events:none;user-select:none;}
+.fcoord:nth-child(1){top:22%;right:5%;animation-delay:0s;}
+.fcoord:nth-child(2){top:66%;right:3%;animation-delay:1.5s;}
+.fcoord:nth-child(3){top:42%;left:2%;animation-delay:2.8s;font-size:8px;}
+@keyframes floatY{0%,100%{transform:translateY(0);opacity:0.3;}50%{transform:translateY(-8px);opacity:0.6;}}
+.hero-inner{max-width:620px;}
+.hero-label{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeUp .5s .1s both;}
+.hero-label::before{content:'';width:24px;height:1.5px;background:var(--gold);flex-shrink:0;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,10vw,82px);font-weight:900;line-height:1.0;color:#EDE8DF;margin-bottom:20px;animation:fadeUp .6s .25s both;}
+.hero h1 em{font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:14px;line-height:1.8;color:var(--muted);max-width:440px;margin-bottom:36px;animation:fadeUp .6s .4s both;}
+.hero-btns{display:flex;flex-direction:column;gap:12px;animation:fadeUp .6s .55s both;}
+@media(min-width:480px){.hero-btns{flex-direction:row;flex-wrap:wrap;}}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07090F;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:15px 28px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 40px rgba(212,168,67,0.2);transition:transform .2s,box-shadow .2s;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(212,168,67,0.4);}
+.btn-ghost{background:transparent;border:1.5px solid rgba(237,232,223,0.2);color:#EDE8DF;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:border-color .2s,color .2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:52px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.07);animation:fadeUp .6s .7s both;}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;}
+.stat-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── SECTIONS ── */
+section{padding:80px 24px;background:#07090F;}
+.sec-inner{max-width:900px;margin:0 auto;}
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.sec-label::before{content:'';width:18px;height:1px;background:var(--gold);}
+.sec-h{font-family:'Playfair Display',serif;font-size:clamp(28px,6vw,48px);font-weight:900;line-height:1.1;color:#EDE8DF;margin-bottom:12px;}
+.sec-h em{font-style:italic;color:var(--gold);}
+.sec-p{font-size:14px;color:var(--muted);line-height:1.8;max-width:480px;margin-bottom:48px;}
+
+/* ── TIMELINE ── */
+.tl-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+@media(min-width:680px){.tl-grid{grid-template-columns:1fr 1fr;}}
+.tl-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);padding:32px 28px;position:relative;overflow:hidden;transition:background .3s,border-color .3s;}
+.tl-card:first-child{border-radius:12px 0 0 0;}
+.tl-card:nth-child(2){border-radius:0 12px 0 0;}
+.tl-card:nth-child(3){border-radius:0 0 0 12px;}
+.tl-card:last-child{border-radius:0 0 12px 0;}
+@media(max-width:679px){.tl-card{border-radius:0!important;}.tl-card:first-child{border-radius:12px 12px 0 0!important;}.tl-card:last-child{border-radius:0 0 12px 12px!important;}}
+.tl-card:hover{background:rgba(212,168,67,0.04);border-color:rgba(212,168,67,0.3);}
+.tl-n{font-family:'Playfair Display',serif;font-size:64px;font-weight:900;color:rgba(212,168,67,0.07);position:absolute;top:8px;right:16px;line-height:1;transition:color .3s;}
+.tl-card:hover .tl-n{color:rgba(212,168,67,0.13);}
+.tl-ico{width:42px;height:42px;border-radius:11px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px;}
+.tl-title{font-size:17px;font-weight:700;margin-bottom:10px;color:#EDE8DF;}
+.tl-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+
+/* ── BENTO ── */
+.bento{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:600px){.bento{grid-template-columns:1.5fr 1fr;}.bento .big{grid-row:span 2;}}
+.bcard{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:14px;padding:28px;position:relative;overflow:hidden;transition:border-color .3s,background .3s;}
+.bcard:hover{border-color:rgba(212,168,67,0.35);background:rgba(212,168,67,0.03);}
+.bcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .4s;}
+.bcard:hover::after{transform:scaleX(1);}
+.bcard-ico{font-size:28px;margin-bottom:16px;display:block;}
+.bcard-title{font-size:17px;font-weight:700;color:#EDE8DF;margin-bottom:8px;line-height:1.2;}
+.bcard-text{font-size:12px;color:var(--muted);line-height:1.7;}
+.bcard-big-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;}
+.dot-live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 8px var(--green);animation:pulse 2s infinite;vertical-align:middle;}
+@keyframes pulse{0%,100%{box-shadow:0 0 5px var(--green);}50%{box-shadow:0 0 14px var(--green);}}
+
+/* ── FORM ── */
+.form-wrap{max-width:680px;margin:0 auto;}
+.form-card{background:rgba(11,15,26,0.8);border:1px solid var(--border);border-radius:16px;padding:40px 32px;}
+@media(max-width:480px){.form-card{padding:24px 16px;}}
+.form-step-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.form-step-lbl::before{content:'';width:14px;height:1px;background:var(--gold);}
+.form-divider{height:1px;background:rgba(255,255,255,0.06);margin:28px 0;}
+
+/* CHECKBOXES */
+.cb-group{display:flex;flex-direction:column;gap:10px;margin-bottom:4px;}
+.cb-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.025);border:1.5px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s;user-select:none;}
+.cb-item:hover{border-color:rgba(212,168,67,0.35);background:rgba(212,168,67,0.04);}
+.cb-item input[type=checkbox]{display:none;}
+.cb-box{width:20px;height:20px;border:1.5px solid rgba(212,168,67,0.35);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:13px;color:transparent;font-weight:700;}
+.cb-item input:checked~.cb-box{background:var(--gold);border-color:var(--gold);color:#07090F;}
+.cb-item:has(input:checked){border-color:rgba(212,168,67,0.45);background:rgba(212,168,67,0.06);}
+.cb-label{font-size:14px;font-weight:600;color:var(--text);}
+.cb-label span{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;}
+
+/* INPUTS */
+.fg{margin-bottom:20px;}
+.fg label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-family:'JetBrains Mono',monospace;}
+.fg label em{color:var(--gold);font-style:normal;}
+.fg input,.fg textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:14px 16px;color:#EDE8DF;font-family:'Syne',sans-serif;font-size:14px;outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;}
+.fg input:focus,.fg textarea:focus{border-color:rgba(212,168,67,0.5);background:rgba(212,168,67,0.03);}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(237,232,223,0.22);}
+.fg textarea{min-height:88px;resize:vertical;line-height:1.6;}
+
+/* MESSENGER BUTTONS */
+.msg-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:380px){.msg-btns{grid-template-columns:1fr;}}
+.btn-wa{background:linear-gradient(135deg,#1DA851,#25D366);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:16px 20px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(37,211,102,0.2);}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,211,102,0.35);}
+.btn-tg{background:linear-gradient(135deg,#1A7FBA,#229ED9);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:16px 20px;border-radius:10px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(34,158,217,0.2);}
+.btn-tg:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(34,158,217,0.35);}
+.form-note{font-size:10px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.7;font-family:'JetBrains Mono',monospace;}
+
+/* SUCCESS */
+#success-screen{display:none;text-align:center;padding:48px 16px;}
+.success-ico{font-size:60px;margin-bottom:20px;display:block;animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;}
+@keyframes popIn{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success-h{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:var(--gold);margin-bottom:10px;}
+.success-p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
+.success-btns{display:flex;flex-direction:column;gap:10px;align-items:center;}
+@media(min-width:400px){.success-btns{flex-direction:row;justify-content:center;}}
+
+/* CONTACTS */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:32px;}
+@media(min-width:500px){.contact-grid{grid-template-columns:1fr 1fr;}}
+.contact-card{background:rgba(255,255,255,0.025);border:1px solid var(--border);border-radius:12px;padding:20px 22px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s,background .2s;}
+.contact-card:hover{border-color:rgba(212,168,67,0.35);background:rgba(212,168,67,0.04);}
+.cc-ico{font-size:22px;flex-shrink:0;}
+.cc-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:3px;}
+.cc-val{font-size:14px;font-weight:700;color:#EDE8DF;}
+.fop-block{margin-top:20px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:18px 22px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);line-height:1.9;}
+.fop-block strong{color:#EDE8DF;}
+
+/* DISCLAIMER */
+.disc-box{background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.18);border-radius:12px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;}
+.disc-ico{font-size:20px;flex-shrink:0;margin-top:2px;}
+.disc-text{font-size:12px;color:var(--muted);line-height:1.8;}
+.disc-text strong{color:#EDE8DF;}
+
+/* FOOTER */
+footer{padding:32px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;background:#07090F;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:1px;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<canvas id="cvs"></canvas>
+<div class="grain"></div>
+<div class="page">
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-box">🏛</div>
+    <div>
+      <div class="logo-name">БудЕксперт</div>
+      <div class="logo-sub">ВАСИЛЬКІВ · EST. 2006</div>
+    </div>
+  </a>
+  <div class="hdr-right">
+    <a href="tel:+380961210906" class="hdr-tel">096 121 09 06</a>
+    <a href="#form-section" class="hdr-btn">Замовити довідку</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="crn tl"></div><div class="crn tr"></div>
+  <div class="crn bl"></div><div class="crn br"></div>
+  <div class="scan"></div>
+  <span class="fcoord">48.4647°N · 30.5238°E</span>
+  <span class="fcoord">UA-32 · KYV-OBL</span>
+  <span class="fcoord">ARCH-DATA · 2005/2023</span>
+  <div class="hero-inner">
+    <div class="hero-label">Для українців за кордоном</div>
+    <h1>Довідка про<br>вартість <em>майна</em><br>в Україні</h1>
+    <p class="hero-desc">Аналітична довідка про ринкову вартість нерухомості на дату угоди — на основі архівних даних. Для банку, податкової, нотаріуса. Дистанційно, PDF на email.</p>
+    <div class="hero-btns">
+      <a href="#form-section" class="btn-gold">📋 Подати заявку</a>
+      <a href="#services" class="btn-ghost">Дізнатись більше</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">18+</div><div class="stat-lbl">Років на ринку</div></div>
+      <div><div class="stat-num">5 000</div><div class="stat-lbl">Клієнтів</div></div>
+      <div><div class="stat-num">1–3</div><div class="stat-lbl">Робочі дні</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-lbl">Онлайн</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM / BENTO -->
+<section id="services">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Для кого</div>
+    <h2 class="sec-h reveal">Кому потрібна <em>ця довідка?</em></h2>
+    <p class="sec-p reveal">Будь-хто, хто придбав або продав нерухомість в Україні і тепер перебуває за кордоном.</p>
+    <div class="bento reveal">
+      <div class="bcard big">
+        <span class="bcard-ico">🏦</span>
+        <div class="bcard-big-num">5 000+</div>
+        <div class="bcard-title">Іноземний банк вимагає підтвердження</div>
+        <div class="bcard-text" style="margin-bottom:12px;">Польські, німецькі, чеські банки перевіряють походження коштів від продажу нерухомості в Україні.</div>
+        <div class="bcard-text">Ми готуємо аналітичний документ на основі архівних даних ринку — з підписом і реквізитами ФОП.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico">📋</span>
+        <div class="bcard-title">Податкова за кордоном</div>
+        <div class="bcard-text">Декларування майна та доходів від угод з нерухомістю в Україні для іноземної податкової.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico">🏠</span>
+        <div class="bcard-title">ВНЖ / Резиденція</div>
+        <div class="bcard-text">Підтвердження майнового стану для отримання виду на проживання в країні перебування.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico"><span class="dot-live"></span>Онлайн-сервіс</span>
+        <div class="bcard-title">Нотаріус або суд</div>
+        <div class="bcard-text">Документальне підтвердження вартості майна для юридичних процедур та спадщини.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / TIMELINE -->
+<section id="how">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Як це працює</div>
+    <h2 class="sec-h reveal">Чотири кроки до <em>готової довідки</em></h2>
+    <p class="sec-p reveal">Нікуди їхати не потрібно. Ви у Варшаві, Берліні або Празі — ми в Україні.</p>
+    <div class="tl-grid reveal">
+      <div class="tl-card">
+        <span class="tl-n">01</span>
+        <div class="tl-ico">📋</div>
+        <div class="tl-title">Подаєте заявку</div>
+        <div class="tl-desc">Заповнюєте форму нижче — ім'я, телефон, тип послуги. Натискаєте WhatsApp або Telegram — зручно з мобільного.</div>
+      </div>
+      <div class="tl-card">
+        <span class="tl-n">02</span>
+        <div class="tl-ico">💬</div>
+        <div class="tl-title">Надсилаєте документи</div>
+        <div class="tl-desc">У месенджері скидаєте скан документа на право власності. Фото з телефону — підходить.</div>
+      </div>
+      <div class="tl-card">
+        <span class="tl-n">03</span>
+        <div class="tl-ico">💳</div>
+        <div class="tl-title">Отримуєте рахунок</div>
+        <div class="tl-desc">Ми уточнюємо деталі та повідомляємо вартість індивідуально. Реквізити надаємо особисто.</div>
+      </div>
+      <div class="tl-card">
+        <span class="tl-n">04</span>
+        <div class="tl-ico">📧</div>
+        <div class="tl-title">Отримуєте PDF</div>
+        <div class="tl-desc">Готова довідка на email за 1–3 робочі дні. Переклад на англійську, польську, німецьку — за запитом.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="form-section">
+  <div class="sec-inner">
+    <div class="form-wrap">
+      <div class="sec-label reveal">Заявка</div>
+      <h2 class="sec-h reveal">Замовити <em>довідку</em></h2>
+      <p class="sec-p reveal">Оберіть послугу, вкажіть контакти — натисніть WhatsApp або Telegram. Ми відповімо протягом кількох годин.</p>
+      <div class="form-card reveal">
+
+        <!-- ФОРМА -->
+        <div id="form-body">
+          <div class="form-step-lbl">Крок 1 — Оберіть тип довідки</div>
+          <div class="cb-group">
+            <label class="cb-item">
+              <input type="checkbox" name="type" value="bank">
+              <div class="cb-box">✓</div>
+              <div class="cb-label">🏦 Довідка для банку<span>Підтвердження походження коштів</span></div>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" name="type" value="tax">
+              <div class="cb-box">✓</div>
+              <div class="cb-label">📋 Довідка для податкової<span>Декларування майна за кордоном</span></div>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" name="type" value="notary">
+              <div class="cb-box">✓</div>
+              <div class="cb-label">⚖️ Довідка для нотаріуса / суду<span>Юридичне підтвердження вартості</span></div>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" name="type" value="vnzh">
+              <div class="cb-box">✓</div>
+              <div class="cb-label">🏠 Довідка для ВНЖ / резиденції<span>Підтвердження майнового стану</span></div>
+            </label>
+            <label class="cb-item">
+              <input type="checkbox" name="type" value="translate">
+              <div class="cb-box">✓</div>
+              <div class="cb-label">🔤 Переклад довідки<span>Англійська, польська, німецька, чеська</span></div>
+            </label>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <div class="form-step-lbl">Крок 2 — Ваші контакти</div>
+          <div class="fg">
+            <label>Ваше ім'я <em>*</em></label>
+            <input type="text" id="inp-name" placeholder="Як до вас звертатись">
+          </div>
+          <div class="fg">
+            <label>Телефон або Telegram <em>*</em></label>
+            <input type="text" id="inp-phone" placeholder="+380... або @username">
+          </div>
+          <div class="fg">
+            <label>Коментар</label>
+            <textarea id="inp-comment" placeholder="Адреса об'єкта, рік угоди, країна перебування..."></textarea>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <div class="form-step-lbl">Крок 3 — Надіслати через месенджер</div>
+          <div class="msg-btns">
+            <button class="btn-wa" onclick="sendWA()">💬 WhatsApp</button>
+            <button class="btn-tg" onclick="sendTG()">✈️ Telegram</button>
+          </div>
+          <p class="form-note">Після натискання відкриється месенджер з готовим повідомленням.<br>Там же зручно надіслати фото документа на право власності.</p>
+        </div>
+
+        <!-- ЕКРАН УСПІХУ -->
+        <div id="success-screen">
+          <span class="success-ico">✅</span>
+          <div class="success-h">Заявку відправлено!</div>
+          <p class="success-p">Ми отримали ваше повідомлення і зв'яжемось найближчим часом.<br>Очікуйте відповідь у месенджері.</p>
+          <div class="success-btns">
+            <a href="https://wa.me/380961210906" target="_blank" class="btn-wa" style="text-decoration:none;">💬 WhatsApp</a>
+            <a href="https://t.me/vitaliy_bud" target="_blank" class="btn-tg" style="text-decoration:none;">✈️ Telegram</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / BENTO -->
+<section id="trust">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Довіра</div>
+    <h2 class="sec-h reveal">Чому <em>обирають нас</em></h2>
+    <div class="bento reveal" style="margin-bottom:48px;">
+      <div class="bcard big">
+        <span class="bcard-ico">📁</span>
+        <div class="bcard-big-num">18+</div>
+        <div class="bcard-title">Років архівних даних</div>
+        <div class="bcard-text" style="margin-bottom:12px;">Власна база даних ринку нерухомості Київської та інших областей з 2005 року. Авіза, архівні оголошення, аналітика ринку.</div>
+        <div class="bcard-text">Визначаємо ринкову вартість на конкретну дату — 2010, 2013, 2015, 2018 та будь-який інший рік.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico">✅</span>
+        <div class="bcard-title">5 000 клієнтів</div>
+        <div class="bcard-text">Роками допомагаємо власникам нерухомості вирішувати документальні питання швидко.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico">🌍</span>
+        <div class="bcard-title">100% дистанційно</div>
+        <div class="bcard-text">Ви у Варшаві, Берліні, Празі чи Лондоні — заявка онлайн, довідка на email.</div>
+      </div>
+      <div class="bcard">
+        <span class="bcard-ico">🔤</span>
+        <div class="bcard-title">Переклад документа</div>
+        <div class="bcard-text">Англійська, польська, німецька або чеська мова — за запитом.</div>
+      </div>
+    </div>
+
+    <div class="sec-label reveal">Контакти</div>
+    <h3 class="sec-h reveal" style="font-size:clamp(22px,4vw,32px);">Зв'язатись <em>з нами</em></h3>
+    <div class="contact-grid reveal">
+      <a href="https://t.me/vitaliy_bud" target="_blank" class="contact-card">
+        <span class="cc-ico">✈️</span>
+        <div><div class="cc-label">Telegram</div><div class="cc-val">@vitaliy_bud</div></div>
+      </a>
+      <a href="https://wa.me/380961210906" target="_blank" class="contact-card">
+        <span class="cc-ico">💬</span>
+        <div><div class="cc-label">WhatsApp</div><div class="cc-val">096 121 09 06</div></div>
+      </a>
+      <a href="mailto:budekspertinfo@gmail.com" class="contact-card">
+        <span class="cc-ico">📧</span>
+        <div><div class="cc-label">Email</div><div class="cc-val">budekspertinfo@gmail.com</div></div>
+      </a>
+      <a href="tel:+380961210906" class="contact-card">
+        <span class="cc-ico">📞</span>
+        <div><div class="cc-label">Телефон</div><div class="cc-val">096 121 09 06</div></div>
+      </a>
+    </div>
+    <div class="fop-block reveal">
+      <strong>ФОП Хмель Віталій Анатолійович</strong><br>
+      Реєстраційний номер: <strong>2805704493</strong> · Дата реєстрації: <strong>01.08.2006</strong>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding:40px 24px 60px;">
+  <div class="sec-inner">
+    <div class="disc-box reveal">
+      <div class="disc-ico">ℹ️</div>
+      <div class="disc-text">
+        <strong>Важливо знати:</strong> Наша довідка є <strong>аналітичним документом</strong> про ринкову вартість нерухомості на основі архівних даних ринку. Вона <strong>не є офіційним звітом оцінювача</strong> згідно законодавства України та не реєструється у базі ФДМУ. Документ призначений для надання <strong>іноземним банкам, податковим органам та іншим установам за межами України.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">БудЕксперт</div>
+  <div class="footer-text">ФОП Хмель Віталій Анатолійович · Васильків, Київська область · © 2025</div>
+</footer>
+
+</div>
+
+<script>
+/* ── CANVAS ── */
+(function(){
+  const c=document.getElementById('cvs');
+  const ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  for(let i=0;i<55;i++) pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.4+.4,a:Math.random()*.8+.2});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#07090F';ctx.fillRect(0,0,W,H);
+    /* grid */
+    ctx.strokeStyle='rgba(212,168,67,0.04)';ctx.lineWidth=1;
+    for(let x=0;x<W;x+=80){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(let y=0;y<H;y+=80){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+    /* connections */
+    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<140){ctx.strokeStyle=`rgba(212,168,67,${(1-d/140)*.1})`;ctx.lineWidth=.6;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}
+    }
+    /* dots */
+    pts.forEach(p=>{
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(212,168,67,${p.a*.55})`;ctx.fill();
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── REVEAL ── */
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ── FORM ── */
+const LABELS={bank:'Довідка для банку',tax:'Довідка для податкової',notary:'Довідка для нотаріуса/суду',vnzh:'Довідка для ВНЖ',translate:'Переклад довідки'};
+
+function getTypes(){
+  const checked=[...document.querySelectorAll('input[name=type]:checked')].map(c=>LABELS[c.value]);
+  return checked.length?checked.join(', '):'не вказано';
+}
+
+function buildMsg(){
+  const name=document.getElementById('inp-name').value.trim();
+  const phone=document.getElementById('inp-phone').value.trim();
+  const comment=document.getElementById('inp-comment').value.trim();
+  if(!name||!phone){alert("Будь ласка, вкажіть ім'я та телефон / Telegram");return null;}
+  let m=`Доброго дня! 👋\n`;
+  m+=`Мене звати: ${name}\n`;
+  m+=`Контакт: ${phone}\n`;
+  m+=`Послуга: ${getTypes()}\n`;
+  if(comment) m+=`Коментар: ${comment}\n`;
+  m+=`\nЗаявка з сайту БудЕксперт`;
+  return m;
+}
+
+function showSuccess(){
+  document.getElementById('form-body').style.display='none';
+  document.getElementById('success-screen').style.display='block';
+}
+
+function sendWA(){
+  const msg=buildMsg();if(!msg)return;
+  window.open(`https://wa.me/380961210906?text=${encodeURIComponent(msg)}`,'_blank');
+  showSuccess();
+}
+
+function sendTG(){
+  const msg=buildMsg();if(!msg)return;
+  window.open(`https://t.me/vitaliy_bud?text=${encodeURIComponent(msg)}`,'_blank');
+  showSuccess();
+}
+</script>
+</body>
+</html>
