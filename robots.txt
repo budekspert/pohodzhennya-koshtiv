@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /pohodzhennya-koshtiv/
+Sitemap: https://github.io/sitemap.xml
